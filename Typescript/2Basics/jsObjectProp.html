@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Object Prop</title>
+</head>
+<body>
+    <p id="person1"></p>
+    <p id="jimCycles"></p>
+</body>
+<script>
+     const person = {
+        name: "Jim",
+        nickName: "Jimbo",
+        height: "188",
+        hairColor: "black"
+    };
+
+    // me soovime niimodi, et pikkus on 'undefined'
+    delete person["height"]
+    // Jim is undefined in height
+    document.getElementById("person1").innerHTML = person.name + " is " + person.height + " in height";
+
+    const car = {
+        human: "Jim",
+        height: 188,
+        bicycles: {
+            cycle1: "Fuji",
+            cycle2: "Schwinn",
+            cycle3: "Trek"
+        }
+    }
+
+    document.getElementById("jimCycles").innerHTML = car.human + " likes to ride " + car.bicycles.cycle2 + " bike the most";
+</script>
+</html>

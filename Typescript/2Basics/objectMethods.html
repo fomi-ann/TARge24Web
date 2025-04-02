@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Methods</title>
+</head>
+<body>
+    <p id="person1"></p>
+    <p id="arrayPerson"></p>
+</body>
+<script>
+    const person1 = {
+        name: "Jim",
+        nickName: "Jimbo",
+        height: "188",
+        hairColor: "black"
+    };
+
+    person1.fullName = function(){return (this.name + " " + this.nickName).toUpperCase()};
+    //My name is JIM JIMBO
+    document.getElementById("person1").innerHTML = "My name is " + person1.fullName();
+
+    const person2 = {
+        name: "Jim",
+        nickName: "Jimbo",
+        height: "188",
+        hairColor: "black"
+    };
+    const someArray = Object.values(person2);
+    document.getElementById("arrayPerson").innerHTML = someArray;
+
+</script>
+</html>

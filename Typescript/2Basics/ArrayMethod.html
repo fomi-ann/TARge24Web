@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="car"></p>
+    <p id="shiftedCar"></p>
+    <p id="unshiftedCar"></p>
+    <p id="deletedCar"></p>
+    <p id="poppedCar"></p>
+    <p id="splicedCar"></p>
+
+    <p id="carsDelete1"></p>
+    <p id="carsDelete2"></p>
+
+    <p id="carShift1"></p>
+    <p id="carShift2"></p>
+
+</body>
+<script>
+    const cars = ["Volvo", "BMW", "Audi"];
+    let carsSize = cars.length;
+    document.getElementById("car").innerHTML = carsSize;
+    
+
+    //kasutada shift, unshift,delete, pop, splice
+    
+    let shiftedCar = cars.shift();
+    document.getElementById("shiftedCar").innerHTML = shiftedCar;
+
+    let unshiftedCar = cars.unshift("Flying Car");
+    document.getElementById("unshiftedCar").innerHTML = unshiftedCar;
+
+    let deletedCar = cars.delete();
+    document.getElementById("deletedCar").innerHTML = deletedCar;
+
+    let poppedCar = cars.pop();
+    document.getElementById("popedCar").innerHTML = poppedCar;
+
+    let splicedCar = cars.splice();
+    document.getElementById("splicedCar").innerHTML = splicedCar;
+
+
+    carsSize = cars.delete;
+    document.getElementById("carDelete1").innerHTML = "First car is" + cars[0];
+    delete cars[0];
+    document.getElementById("carsDelete2").innerHTML = cars;
+
+    document.getElementById("carShift1").innerHTML = cars;
+    cars.shift();
+    document.getElementById("carShift2").innerHTML = cars;
+</script>
+</html>

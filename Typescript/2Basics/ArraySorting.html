@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="carNumbers"></p>
+    <p id="carNumbrs2"></p>
+
+    <script>
+        const carPower = [129, 150, 40, 250,300];
+
+        document.getElementById("carNumbers").innerHTML = carPower;
+
+        //sorteerida numbrid ära
+
+        carPower.sort(function(a, b){return a - b});
+        document.getElementById("carNumbers2") = carPower;
+    </script>
+</body>
+</html>

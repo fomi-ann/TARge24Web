@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Gross salary / month</h3>
+    <p id="gross_salary_month"></p>
+
+    <h3>Gross salary / year</h3>
+    <p id="gross_salary_year"></p>
+
+    <h3>Tax free amount / month</h3>
+    <p id="tax_free_month"></p>
+
+    <h3>Tax free amount / year</h3>
+    <p id="tax_free_year"></p>
+
+    <h3>Sum for taxes</h3>
+    <p id="sum_for_taxes"></p>
+
+    <h3>Income tax amount</h3>
+    <p id="income_tax_amount"></p>
+
+    <h3>Neto salary / month</h3>
+    <p id="neto_salary_month"></p>
+
+    <h3>Neto salary / year</h3>
+    <p id="neto_salary_year"></p>
+
+</body>
+<script>
+//Palga kalkulaator
+//1. Sina sisestad brutotasu ja valem arvutab välja netotasu.
+//2. Kokku peab olema kolm erinevat meetodit. 
+// Enne kui meetod algab, siis peab olema kontroll, 
+// et millist meetodi hakatakse kasutama ja sisestatud palgasumma 
+// peab minema edasi järgmisse meetodi.
+//3. Netotasu peab arvutama selliselt välja, et sina ei peaks 
+// tuludeklaratsiooni ajal juurde maksma ega saa pärast riigilt raha 
+// juurde kuna oled rohkem maksnud.
+//4. Kood peab olema inglisekeelne.
+//Palgakalkulaator:
+//https://www.kalkulaator.ee/et/palgakalkulaator
+//Palga arvutamise valem:
+//https://www.emta.ee/et/maksuvaba-tulu
+
+let gross_salary_month = 2800;
+
+let gross_salary_year = gross_salary_month * 12;
+document.getElementById("gross_salary_year").innerHTML =  gross_salary_year;
+
+let tax_free_amount_year;
+let tax_free_amount_month;
+
+if (gross_salary_year <= 14400) {
+    tax_free_amount_year = 7848;
+    tax_free_amount_month = tax_free_amount_year / 12;
+} else if (gross_salary_year > 14400 && gross_salary_year <= 25200) {
+    tax_free_amount_year = 7848 - (7848 / 10800) * (gross_salary_year - 14400);
+    tax_free_amount_month = tax_free_amount_year / 12;
+} else { 
+    tax_free_amount_year = 0;
+    tax_free_amount_month = 0;
+}
+
+document.getElementById("tax_free_year").innerHTML = tax_free_amount_year;
+document.getElementById("tax_free_month").innerHTML = tax_free_amount_month;
+
+let income_tax = 0.22;
+
+let sum_for_taxes = gross_salary_month - tax_free_amount_month;
+document.getElementById("sum_for_taxes").innerHTML = sum_for_taxes;
+
+let income_tax_amount = sum_for_taxes * income_tax
+document.getElementById("income_tax_amount").innerHTML = income_tax_amount;
+
+let neto_salary_month = gross_salary_month - income_tax_amount
+document.getElementById("neto_salary_month").innerHTML = neto_salary_month;
+
+let neto_salary_year = neto_salary_month * 12;
+document.getElementById("neto_salary_year").innerHTML = neto_salary_year;
+
+let tulu_summa = 14400;
+document.getElementById("gross_salary_month").innerHTML = gross_salary_month;
+
+let tax_free_year = 7848;
+document.getElementById("tax_free_year").innerHTML = tax_free_year;
+
+</script>
+</html>

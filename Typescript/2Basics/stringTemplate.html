@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Template</title>
+</head>
+<body>
+    <p id="tereTulemast"></p>
+    <p id="loop"></p>
+    <p id="loop2"></p>
+    <p id="loop3"></p>
+</body>
+<script>
+    let firstName = "Heli";
+    let lastName = "Kopter";
+
+    let text = `Tere tulemast, ${firstName} ${lastName}!`;
+    document.getElementById("tereTulemast").innerHTML = text;
+
+    let title = "String Template";
+    let someLoop = ["C++", "JavaScript", "Typescript"];
+    let loopText = "";
+    let loopText2 = "";
+    let loopText3 = "";
+
+    // tulemus peaks olema selline:
+    // C++
+    // JavaScript
+    // Typescript
+    
+    for (let i = 0; i < someLoop.length; i++) {
+        // console.log(someLoop[i]);
+        loopText += someLoop[i] + "<br>";
+    }
+
+    for (variable in someLoop) {
+        loopText2 += someLoop[variable] + "<br>";
+    }
+
+    for (const x of someLoop) {
+        loopText3 += `<li>${x}</li>`
+    }
+
+    document.getElementById("loop").innerHTML = loopText;
+    document.getElementById("loop2").innerHTML = loopText2;
+    document.getElementById("loop3").innerHTML = loopText3;
+</script>
+</html>

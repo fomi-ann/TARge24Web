@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="buildings"></p>
+    <p id="buildings2"></p>
+    <p id="buildings3"></p>
+    <p id="someIteration"></p>
+</body>
+<script>
+    let t = "";
+    const buildingTypes = ["Elamu", "Korterelamu", "Suvila", "Ärihoone", "Laohoone", "Büroohoone"]
+
+    for (b in buildingTypes) {
+        t += `<li>${buildingTypes[b]}</li>`
+    }
+    document.getElementById("buildings").innerHTML = t;
+
+    let t2 = "";
+
+    for (let i = 0; i < buildingTypes.length; i ++) {
+        t2 += `<li>${buildingTypes[i]}</li>`
+    }
+    document.getElementById("buildings2").innerHTML = t2;
+
+    let t3 = "";
+    let q = 0;
+    let len = buildingTypes.length;
+
+    for (; q < buildingTypes.length; ) {
+    t3 += `<li>${buildingTypes[q]}</li>`;
+    q ++
+    }
+    document.getElementById("buildings3").innerHTML = t3;
+
+    // for Each
+    const numbers = [34, 6, 1, 89, 98];
+    let t4 = "";
+    numbers.forEach(someIteration);
+    document.getElementById("someIteration").innerHTML = t4;
+
+    function someIteration(value, index, array) {
+        t4 += value + "<br>";
+    }
+</script>
+</html>

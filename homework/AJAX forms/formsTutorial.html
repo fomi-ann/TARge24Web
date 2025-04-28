@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dcode AJAX forms tutorial</title>
+    <link rel="stylesheet" href="formTutorialStyles.css">
+    <!-- 'defer' waits for the whole document to be loaded before running script.
+     othervise the console returns nulls for form elements -->
+    <script src="formsTutorial.js" defer></script>
+</head>
+<body>
+    <div class="form">
+        <ul id="form-messages"></ul>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" spellcheck="false">
+
+        <label for="password">Password</label>
+        <input type="text" id="password">
+
+        <button type="submit" id="btn-submit"> Login</button>
+    </div>
+</body>
+</html>
